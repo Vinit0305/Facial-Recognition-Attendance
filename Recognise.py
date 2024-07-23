@@ -50,6 +50,14 @@ while True:
                     filename = xlwrite.output('attendance', 'class1', 3, id, 'yes');
                     dict[str(id)] = str(id)
 
+            elif (id == 10):
+                id = 'Vinit'
+                if ((str(id)) not in dict):
+                    filename = xlwrite.output('attendance', 'class1', 4, id, 'yes');
+                    dict[str(id)] = str(id);
+                    print ("user detected");
+
+
         else:
             id = 'Unknown, can not recognize'
             flag = flag + 1
@@ -63,7 +71,7 @@ while True:
         #playsound('transactionSound.mp3')
         print("Transaction Blocked")
         break;
-    if time.time() > start + period:
+    if time.time() > start + period + period :
         break;
     if cv2.waitKey(100) & 0xFF == ord('q'):
         break;
